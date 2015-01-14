@@ -8,10 +8,8 @@
  * Controller of the gitStuffApp
  */
 angular.module('gitStuffApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope, gitService) {
+    console.log(gitService.getUser($scope.username));
   });
+
+
