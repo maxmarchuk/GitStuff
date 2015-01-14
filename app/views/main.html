@@ -1,8 +1,6 @@
 <div>
-  <input type="username" ng-model="username"
-         placeholder="Github user name">
-  <a href="#" id="submitbtn" 
-     ng-click="getGitInfo()">Search</a>
-  <div id="apiData" class="clearfix"></div>
+  <input type="username" ng-model="username" placeholder="Github user name">
+  <button ng-click="getGitInfo()">Search</button>
+  <div id="apiData" class="clearfix">{{username}}</div>
 </div>
 

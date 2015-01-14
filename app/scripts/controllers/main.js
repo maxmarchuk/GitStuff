@@ -9,7 +9,10 @@
  */
 angular.module('gitStuffApp')
   .controller('MainCtrl', function ($scope, gitService) {
-    console.log(gitService.getUser($scope.username));
+
+    $scope.getGitInfo = function() {
+      console.log(gitService.getUser($scope.username));
+    }
   });
 
 

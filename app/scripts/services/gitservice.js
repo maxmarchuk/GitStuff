@@ -10,9 +10,10 @@
 angular.module('gitStuffApp')
   .service('gitService', function ($http) {
     // AngularJS will instantiate a singleton by calling "new" on this function
-    var getUser = function (searchTerm) {
-      $http.get('api.github.com/user/searchTerm').
+    this.getUser = function (searchTerm) {
+      $http.get('https://api.github.com/users/' + searchTerm).
         success(function (data, status, headers, config) {
+          console.log(data);
           return data;
         }).
         error(function (data, status, headers, config) {
