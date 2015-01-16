@@ -11,8 +11,9 @@ angular.module('gitStuffApp')
   .controller('MainCtrl', function ($scope, gitService) {
 
     $scope.getGitInfo = function() {
-      //console.log(gitService.getUser($scope.username));
-      $scope.user = gitService.getUser($scope.username);
+      $scope.user = gitService.getUser($scope.username).then(function(data){
+        $scope.user = data;
+      });
       $scope.loaded = true;
     }
   });
