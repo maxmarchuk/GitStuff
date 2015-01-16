@@ -1,6 +1,10 @@
 <div>
-  <input type="username" ng-model="username" placeholder="Github user name">
-  <button ng-click="getGitInfo()">Search</button>
+  <input type="username" ng-model="username" placeholder="Github user name" ng-keyup="$event.keyCode == 13 && getGitInfo()">  <!--$event.keyCode == 13 is the enter key -->
+  <button ng-click="">Search</button>
   <div id="apiData" class="clearfix">{{username}}</div>
 </div>
 
+<div ng-show="loaded">
+  <h1>{{user.name}}</h1>
+  <img src="{{user.avatar_user}}" width="100" height="100" alt="{{user.user_name}}">
+</div>
