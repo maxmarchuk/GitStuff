@@ -24,4 +24,20 @@ angular.module('gitStuffApp')
       return def.promise;
 
     }
+
+
+    this.getRepos = function (searchTerm) {
+
+      var def = $q.defer();
+
+      $http.get('https://api.github.com/users/' + searchTerm + '/repos')
+        .success(function(data) {
+          def.resolve(data);
+        })
+        .error(function() {
+          def.reject('Failed to get repos for user "' + searchTerm + '"');
+        });
+      return def.promise;
+
+    }
   });

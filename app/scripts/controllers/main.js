@@ -12,15 +12,30 @@ angular.module('gitStuffApp')
 
     $scope.getGitInfo = function() {
       $scope.loaded = false;
-      $scope.user = gitService.getUser($scope.username).then(function(data){
+      var success;
+      gitService.getUser($scope.username).then(function(data){
         $scope.user = data;
         console.log(data);
-            $scope.loaded = true;
+        $scope.loaded = true;
+        success = true;
       },
       function(error) {
         console.log(error);
         $scope.error = error;
+        success = false;
       });
+
+      if(success)
+      {
+        gitService.getRepos($scope.user.login).then(function(data){
+          $scope.repos = data;
+          console.log(data);
+        },
+        function(message){
+          console.log(error);
+          $scope.error = error;
+        }
+      }
     }
   });
 
