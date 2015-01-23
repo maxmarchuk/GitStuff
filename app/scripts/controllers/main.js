@@ -34,7 +34,7 @@ angular.module('gitStuffApp')
         function(message){
           console.log(error);
           $scope.error = error;
-        }
+        })
       }
     }
   });
