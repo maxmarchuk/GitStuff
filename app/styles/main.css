@@ -31,6 +31,10 @@ body {
   border-top: 1px solid #e5e5e5;
 }
 
+ul {
+  list-style: none;
+}
+
 /* Customize container */
 @media (min-width: 768px) {
   .container {
@@ -76,4 +80,11 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+
+/* User vcard styles */
+@media all {
+
+
 }
