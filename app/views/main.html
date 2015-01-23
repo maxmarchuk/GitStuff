@@ -4,9 +4,24 @@
 </div>
 
 <div ng-show="loaded">
-  <h1>{{user.name}}</h1>
-
   <img ng-src="{{user.avatar_url}}" width="100" height="100" alt="{{user.user_name}}">
+  <div>
+    <h1 ng-show="loaded">{{user.name}}</h1>
+    <ul>
+      <li ng-show="loaded">{{user.login}}</li>
+      <li ng-if != null>{{user.blog}}</li>
+      <li ng-if != null>{{user.email}}</li>
+      <li>{{user.location}}</li>
+    </ul>
+   </div>
+
+  <div>
+    <ul>
+      <li>{{user.followers}} <p>Followers</p></li>
+      <li>{{user.starred}} <p>Starred</p></li>
+      <li>{{user.following}} <p>Following</p> </li>
+    </ul>
+  </div>
 </div>
 
 <div ng-show="error">
