@@ -19,11 +19,11 @@ angular.module('gitStuffApp')
           def.resolve(data);
         })
         .error(function() {
-          def.reject("Failed to get user");
+          def.reject('Failed to get user');
         });
       return def.promise;
 
-    }
+    };
 
 
     this.getRepos = function (searchTerm) {
@@ -39,5 +39,5 @@ angular.module('gitStuffApp')
         });
       return def.promise;
 
-    }
+    };
   });

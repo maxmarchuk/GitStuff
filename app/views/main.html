@@ -22,6 +22,11 @@
       <li>{{user.following}} <p>Following</p> </li>
     </ul>
   </div>
+
+  <ul ng-repeat="repo in repos">
+    <li>{{repo.html_url}}</li>
+  </ul>
+
 </div>
 
 <div ng-show="error">
