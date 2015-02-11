@@ -9,13 +9,13 @@
   </div>
 </div><!--end row-->
 
-<div ng-show="loaded" class="row" >
-  <div class="col-md-8">
-      <img ng-src="{{user.avatar_url}}" width="230" height="230" alt="{{user.user_name}}">
+<div ng-show="loaded" class="row" id="user-panel">
+  <div class="col-md-4">
+      <img ng-src="{{user.avatar_url}}" class="img-responsive" alt="{{user.user_name}}">
 
       <div id="name-details">
-        <h1>{{user.name}}</h1>
-        <h2>{{user.login}}</h2>
+        <h1><span class="name">{{user.name}}</span>
+        <span class="username">{{user.login}}</span></h1>
       </div>
 
       <div id="user-details">
@@ -27,16 +27,16 @@
       </div>
 
       <div id="followers-details">
-        <ul>
-          <li>{{user.followers}} <p>Followers</p></li>
-          <li>{{user.starred}} <p>Starred</p></li>
-          <li>{{user.following}} <p>Following</p> </li>
+        <ul class="list-inline">
+          <li class="text-center">{{user.followers}} <p>Followers</p></li>
+          <li class="text-center">{{user.starred}} <p>Starred</p></li>
+          <li class="text-center">{{user.following}} <p>Following</p> </li>
         </ul>
       </div>
   </div>
 
   <div class="col-md-4">
-    <ul ng-repeat="repo in repos">
+    <ul ng-repeat="repo in repos" >
       <li><a href="{{repo.html_url}}" alt="{{repo.name}}">{{repo.name}}</a></li>
     </ul>
   </div>
