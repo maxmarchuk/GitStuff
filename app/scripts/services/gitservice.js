@@ -19,7 +19,7 @@ angular.module('gitStuffApp')
           def.resolve(data);
         })
         .error(function() {
-          def.reject('Failed to get user');
+          def.reject('Oops! No user found with username ' + searchTerm );
         });
       return def.promise;
 

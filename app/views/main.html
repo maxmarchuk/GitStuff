@@ -35,10 +35,17 @@
       </div>
   </div>
 
-  <div class="col-md-4">
-    <ul ng-repeat="repo in repos" >
-      <li><a href="{{repo.html_url}}" alt="{{repo.name}}">{{repo.name}}</a></li>
-    </ul>
+  <div class="col-md-8">
+      <h2>Repos</h2>
+      <table class="table">
+    <tr ng-repeat="repo in repos" >
+        <td><a href="{{repo.html_url}}" alt="{{repo.name}}">{{repo.name}}</a>
+          <p>{{repo.description}}</p>
+          <p><span class="date-name">Last Updated </span>{{repo.updated_at | date:longDate}}
+          </p>
+        </td>
+    </tr>
+      </table>
   </div>
 </div><!--end row-->
 

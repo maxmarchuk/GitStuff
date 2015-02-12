@@ -5,7 +5,7 @@ body {
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
+/*.header,*/
 .marketing,
 .footer {
   padding-left: 15px;
@@ -14,6 +14,7 @@ body {
 
 /* Custom page header */
 .header {
+  /*background: #da2e75;*/
   border-bottom: 1px solid #e5e5e5;
 }
 /* Make the masthead heading the same height as the navigation */
@@ -107,4 +108,11 @@ ul {
     text-overflow: ellipsis;
   }
 
+  /* For Repo List */
+  span.date-name {
+    text-transform: uppercase;
+    color: #737373;
+    font-size: 11px;
+    font-weight: bold;
+  }
 }
