@@ -20,6 +20,8 @@ angular.module('gitStuffApp')
         gitService.getRepos($scope.user.login).then(function(repodata){
           $scope.repos = repodata;
           console.log(repodata);
+
+          $scope.error = null;
         },
         function(error){
           console.log(error);
