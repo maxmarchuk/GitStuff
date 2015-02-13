@@ -20,8 +20,8 @@
 
       <div id="user-details">
         <ul>
-          <li>{{user.blog}}</li>
-          <li>{{user.email}}</li>
+          <li><a href="{{user.blog}}"><span id="blog">{{user.blog}}</span></a></li>
+          <li><a href="mailto:{{user.email}}"><span id="email">{{user.email}}</span></a></li>
           <li>{{user.location}}</li>
         </ul>
       </div>
@@ -35,10 +35,11 @@
       </div>
   </div>
 
+  <!-- Repo Table -->
   <div class="col-md-8">
       <h2>Repos</h2>
       <table class="table">
-    <tr ng-repeat="repo in repos" >
+    <tr ng-repeat="repo in repos | pagination: 5 |limitTo: 5" >
         <td><a href="{{repo.html_url}}" alt="{{repo.name}}">{{repo.name}}</a>
           <p>{{repo.description}}</p>
           <p><span class="date-name">Last Updated </span>{{repo.updated_at | date:longDate}}
@@ -47,6 +48,13 @@
     </tr>
       </table>
   </div>
+    <!-- Pagination -->
+    <nav>
+        <ul class="pagination">
+          <li class="disabled"> </li>
+        </ul>
+    </nav>
+
 </div><!--end row-->
 
 <div ng-show="error">
