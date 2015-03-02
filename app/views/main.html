@@ -1,7 +1,9 @@
 <div class="row">
   <div class="col-md-10">
     <form class="form-horizontal">
-      <input type="username" ng-model="username" placeholder="Github user name" ng-keyup="$event.keyCode == 13 && getGitInfo()" class="form-control">  <!--$event.keyCode == 13 is the enter key -->
+      <input type="username" ng-model="username" placeholder="Github user name"
+             ng-keyup="$event.keyCode == 13 && getGitInfo()" class="form-control">
+      <!--$event.keyCode == 13 is the enter key -->
     </form>
   </div>
   <div class="col-md-2">
@@ -11,49 +13,45 @@
 
 <div ng-show="loaded" class="row" id="user-panel">
   <div class="col-md-4">
-      <img ng-src="{{user.avatar_url}}" class="img-responsive" alt="{{user.user_name}}">
+    <img ng-src="{{user.avatar_url}}" class="img-responsive" alt="{{user.user_name}}">
 
-      <div id="name-details">
-        <h1><span class="name">{{user.name}}</span>
+    <div id="name-details">
+      <h1><span class="name">{{user.name}}</span>
         <span class="username">{{user.login}}</span></h1>
-      </div>
+    </div>
 
-      <div id="user-details">
-        <ul>
-          <li><a href="{{user.blog}}"><span id="blog">{{user.blog}}</span></a></li>
-          <li><a href="mailto:{{user.email}}"><span id="email">{{user.email}}</span></a></li>
-          <li>{{user.location}}</li>
-        </ul>
-      </div>
+    <div id="user-details">
+      <ul>
+        <li><a href="{{user.blog}}"><span id="blog">{{user.blog}}</span></a></li>
+        <li><a href="mailto:{{user.email}}"><span id="email">{{user.email}}</span></a></li>
+        <li>{{user.location}}</li>
+      </ul>
+    </div>
 
-      <div id="followers-details">
-        <ul class="list-inline">
-          <li class="text-center">{{user.followers}} <p>Followers</p></li>
-          <li class="text-center">{{user.starred}} <p>Starred</p></li>
-          <li class="text-center">{{user.following}} <p>Following</p> </li>
-        </ul>
-      </div>
+    <div id="followers-details">
+      <ul class="list-inline">
+        <li class="text-center">{{user.followers}} <p>Followers</p></li>
+        <li class="text-center">{{user.starred}} <p>Starred</p></li>
+        <li class="text-center">{{user.following}} <p>Following</p></li>
+      </ul>
+    </div>
   </div>
 
   <!-- Repo Table -->
   <div class="col-md-8">
-      <h2>Repos</h2>
-      <table class="table">
-    <tr ng-repeat="repo in repos | pagination: 5 |limitTo: 5" >
+    <h2>Repos</h2>
+    <table class="table">
+      <tr ng-repeat="repo in repos">
         <td><a href="{{repo.html_url}}" alt="{{repo.name}}">{{repo.name}}</a>
+
           <p>{{repo.description}}</p>
+
           <p><span class="date-name">Last Updated </span>{{repo.updated_at | date:longDate}}
           </p>
         </td>
-    </tr>
-      </table>
+      </tr>
+    </table>
   </div>
-    <!-- Pagination -->
-    <nav>
-        <ul class="pagination">
-          <li class="disabled"> </li>
-        </ul>
-    </nav>
 
 </div><!--end row-->
 

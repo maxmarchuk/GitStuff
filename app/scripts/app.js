@@ -23,6 +23,10 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/followers', {
+        templateUrl: 'views/followers.html',
+        controller: 'FollowCtrl'
+      })
      .otherwise({
         redirectTo: '/'
       });

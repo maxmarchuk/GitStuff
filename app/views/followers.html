@@ -1,0 +1,10 @@
+<div ng-show="loaded" class="row" id="follower-panel">
+  <div class="col-md-8">
+    <h2>Followers</h2>
+    <table class="table">
+      <tr ng-repeat="f in followers">
+        {{f.login}}
+      </tr>
+    </table>
+  </div>
+</div>

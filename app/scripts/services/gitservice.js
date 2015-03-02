@@ -40,4 +40,19 @@ angular.module('gitStuffApp')
       return def.promise;
 
     };
+
+    this.getFollowers = function (username) {
+
+      var def = $q.defer();
+
+      $http.get('https://api.github.com/users/' + username + '/followers')
+        .success(function(data) {
+          def.resolve(data);
+        })
+        .error(function() {
+          def.reject('Failed to get repos for user "' + username + '"');
+        });
+      return def.promise;
+
+    };
   });
