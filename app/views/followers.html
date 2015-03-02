@@ -1,10 +1,8 @@
 <div ng-show="loaded" class="row" id="follower-panel">
   <div class="col-md-8">
     <h2>Followers</h2>
-    <table class="table">
-      <tr ng-repeat="f in followers">
-        <td>{{f.login}}</td>
-      </tr>
-    </table>
+      <div class="col-mid-4" ng-repeat="f in followers">
+        <a href="{{f.html_url}}">{{f.login}}</a>
+      </div>
   </div>
 </div>

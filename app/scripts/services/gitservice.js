@@ -15,11 +15,11 @@ angular.module('gitStuffApp')
       var def = $q.defer();
 
       $http.get('https://api.github.com/users/' + searchTerm)
-        .success(function(data) {
+        .success(function (data) {
           def.resolve(data);
         })
-        .error(function() {
-          def.reject('Oops! No user found with username ' + searchTerm );
+        .error(function () {
+          def.reject('Oops! No user found with username ' + searchTerm);
         });
       return def.promise;
 
@@ -31,10 +31,10 @@ angular.module('gitStuffApp')
       var def = $q.defer();
 
       $http.get('https://api.github.com/users/' + searchTerm + '/repos')
-        .success(function(data) {
+        .success(function (data) {
           def.resolve(data);
         })
-        .error(function() {
+        .error(function () {
           def.reject('Failed to get repos for user "' + searchTerm + '"');
         });
       return def.promise;
@@ -46,10 +46,10 @@ angular.module('gitStuffApp')
       var def = $q.defer();
 
       $http.get('https://api.github.com/users/' + username + '/followers')
-        .success(function(data) {
+        .success(function (data) {
           def.resolve(data);
         })
-        .error(function() {
+        .error(function () {
           def.reject('Failed to get repos for user "' + username + '"');
         });
       return def.promise;
