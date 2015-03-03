@@ -6,4 +6,3 @@ bower_components
 .idea
 .gitignore
 *.sw*
-app/.htaccess
