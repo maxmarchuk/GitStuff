@@ -138,10 +138,16 @@ ul {
     border-radius: 5px;
 
   }
+  a.usr-block-img {
+    display: block;
+    float: left;
+  }
+
   a.usr-block-name {
     vertical-align: top;
     font-weight: bold;
     font-size: 14px;
+    padding-left: 10px;
   }
   a.usr-block-text {
     font-size: 12px;
