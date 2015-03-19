@@ -1,8 +1,9 @@
 <div ng-show="loaded" class="row" id="follower-panel">
-  <div class="col-md-8">
+  <div class="col-md-12">
     <h2>Followers</h2>
-      <div class="col-mid-4" ng-repeat="f in followers">
-        <a href="{{f.html_url}}">{{f.login}}</a>
+      <div class="usr-block col-md-4" ng-repeat="f in followers">
+        <a href="{{f.html_url}}"> <img class="usr-block-img" src="{{f.avatar_url}}" height="100" width="100"> </a>
+        <a class="usr-block-name" href="{{f.html_url}}">{{f.login}}</a>
       </div>
   </div>
 </div>
