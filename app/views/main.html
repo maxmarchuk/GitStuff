@@ -1,15 +1,4 @@
-<div class="row">
-  <div class="col-md-10">
-    <form class="form-horizontal">
-      <input type="username" ng-model="username" placeholder="Github user name"
-             ng-keyup="$event.keyCode == 13 && getGitInfo()" class="form-control">
-      <!--$event.keyCode == 13 is the enter key -->
-    </form>
-  </div>
-  <div class="col-md-2">
-    <button ng-click="" class="btn btn-default">Search</button>
-  </div>
-</div><!--end row-->
+<div data-search-bar></div>
 
 <div ng-show="loaded" class="row" id="user-panel">
   <div class="col-md-4">
@@ -51,6 +40,13 @@
         </td>
       </tr>
     </table>
+
+    <!--<div ng-show="loaded" ng-controller="PaginationCtrl">-->
+    <div>
+
+    </div>
+
+
   </div>
 
 </div><!--end row-->
