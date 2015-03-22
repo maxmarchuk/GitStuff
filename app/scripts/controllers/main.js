@@ -33,7 +33,9 @@ angular.module('gitStuffApp')
   })
   .directive('searchBar', function() {
     return {
-      template: '<div class="row"><div class="col-md-10"><form class="form-horizontal"><input type="username" ng-model="username" placeholder="Github user name" ng-keyup="$event.keyCode == 13 && getGitInfo()" class="form-control"></form></div><div class="col-md-2"><button ng-click="" class="btn btn-default">Search</button></div></div>'
+      restrict: 'AE',
+      replace: 'true',
+      templateUrl: 'views/search-bar.html'
     };
   });
 
