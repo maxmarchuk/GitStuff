@@ -5,7 +5,7 @@
  * @name gitStuffApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the gitStuffApp
+ * Main Controller of the gitStuffApp
  */
 angular.module('gitStuffApp')
   .controller('MainCtrl', function ($scope, gitService) {
@@ -29,13 +29,6 @@ angular.module('gitStuffApp')
         $scope.error = error;
       });
 
-    };
-  })
-  .directive('searchBar', function() {
-    return {
-      restrict: 'AE',
-      replace: 'true',
-      templateUrl: 'views/search-bar.html'
     };
   });
 

@@ -7,15 +7,9 @@
  * # FollowerCtrl
  * Controller of the gitStuffApp
  */
+
 'use strict';
 
-/**
- * @ngdoc function
- * @name gitStuffApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the gitStuffApp
- */
 angular.module('gitStuffApp')
   .controller('FollowCtrl', function ($scope, gitService) {
     $scope.username = "maxmarchuk";
