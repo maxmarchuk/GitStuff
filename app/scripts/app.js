@@ -9,14 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('gitStuffApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
-  ])
+  .module('gitStuffApp', ['ngRoute'])
   .config(function ($locationProvider, $routeProvider) {
 
     $routeProvider
