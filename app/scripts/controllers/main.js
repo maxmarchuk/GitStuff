@@ -10,9 +10,9 @@
 angular.module('gitStuffApp')
   .controller('MainCtrl', function ($scope, gitService) {
 
-    $scope.getGitInfo = function() {
+    $scope.$on('search', function(event, username) {
       $scope.loaded = false;
-      gitService.getUser($scope.username).then(function(data){
+      gitService.getUser(username).then(function(data){
         $scope.user = data;
         $scope.loaded = true;
 
@@ -29,7 +29,8 @@ angular.module('gitStuffApp')
         $scope.error = error;
       });
 
-    };
+    });
+
   });
 
 

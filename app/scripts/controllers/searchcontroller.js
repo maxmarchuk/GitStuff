@@ -9,13 +9,7 @@
  */
 angular.module('gitStuffApp')
   .controller('SearchcontrollerCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-
-    $scope.getParentUserInfo = function() {
-      $scope.parent.getGitInfo()
+    $scope.notifyMain = function() {
+      $scope.$broadcast('search', $scope.username)
     }
   });
