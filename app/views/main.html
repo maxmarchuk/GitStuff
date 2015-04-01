@@ -28,16 +28,34 @@
   <div class="col-md-8" ng-controller="PaginationCtrl">
     <h2>Repos</h2>
 
-     <ul>
-       <li ng-repeat="repo in repos" >
-        <div>
-          <a href="{{repo.html_url}}" alt="{{repo.name}}">{{repo.name}}</a>
-          <p>{{repo.description}}</p>
-          <p><span class="date-name">Last Updated </span>{{repo.updated_at | date:longDate}}</p>
-          <hr>
-        </div>
+    <ul>
+      <li ng-repeat="repo in repos | pagination: curPage * pageSize | limitTo: pageSize" >
+        <a href="{{repo.html_url}}" alt="{{repo.name}}">{{repo.name}}</a>
+        <p>{{repo.description}}</p>
+        <p><span class="date-name">Last Updated </span>{{repo.updated_at | date:longDate}}</p>
+        <hr>
       </li>
     </ul>
+
+    <!--Pagination div --->
+
+    <div class="pagination-div" ng-show="repos.length">
+      <ul>
+        <li>
+          <button type="button" class="btn btn-default"
+                  ng-disabled="curPage == 0"
+                  ng-click="curPage=curPage-1">PREV</button>
+        </li>
+        <li class="alignmid">
+          <span>Page {{curPage + 1}} of {{ numberOfPages() }}</span>
+        </li>
+        <li>
+          <button type="button" class="btn btn-default"
+                  ng-disabled="curPage >= repos.length/pageSize - 1"
+                  ng-click="curPage = curPage+1">NEXT </button>
+        </li>
+      </ul>
+    </div>
 
   </div>
 

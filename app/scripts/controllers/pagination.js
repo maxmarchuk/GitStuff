@@ -8,11 +8,20 @@
  */
 angular.module('gitStuffApp')
   .controller('PaginationCtrl', function ($scope) {
-    $scope.totalItems = 64;
-    $scope.currentPage = 4;
+    $scope.curPage = 0;
+    $scope.pageSize = 5;
 
-    $scope.setPage = function (pageNo) {
-      $scope.currentPage = pageNo;
+    $scope.numberOfPages = function()
+    {
+      return Math.ceil($scope.repos.length / $scope.pageSize);
+    };
+
+  })
+  .filter('pagination', function()
+  {
+    return function(input, start)
+    {
+      start = +start;
+      return input.slice(start);
     };
   });
-
