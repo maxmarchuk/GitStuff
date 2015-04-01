@@ -12,13 +12,17 @@ angular.module('gitStuffApp')
 
     $scope.$on('search', function(event, username) {
       $scope.loaded = false;
+
+      //pagination stuff
+      $scope.currPage = 0;
+      $scope.pageSize = 5;
+
       gitService.getUser(username).then(function(data){
         $scope.user = data;
         $scope.loaded = true;
 
         gitService.getRepos($scope.user.login).then(function(repodata){
           $scope.repos = repodata;
-
           $scope.error = null;
         },
         function(error){
@@ -32,5 +36,6 @@ angular.module('gitStuffApp')
     });
 
   });
+
 
 

@@ -25,25 +25,19 @@
   </div>
 
   <!-- Repo Table -->
-  <div class="col-md-8">
+  <div class="col-md-8" ng-controller="PaginationCtrl">
     <h2>Repos</h2>
-    <table class="table">
-      <tr ng-repeat="repo in repos">
-        <td><a href="{{repo.html_url}}" alt="{{repo.name}}">{{repo.name}}</a>
 
+     <ul>
+       <li ng-repeat="repo in repos" >
+        <div>
+          <a href="{{repo.html_url}}" alt="{{repo.name}}">{{repo.name}}</a>
           <p>{{repo.description}}</p>
-
-          <p><span class="date-name">Last Updated </span>{{repo.updated_at | date:longDate}}
-          </p>
-        </td>
-      </tr>
-    </table>
-
-    <!--<div ng-show="loaded" ng-controller="PaginationCtrl">-->
-    <div>
-
-    </div>
-
+          <p><span class="date-name">Last Updated </span>{{repo.updated_at | date:longDate}}</p>
+          <hr>
+        </div>
+      </li>
+    </ul>
 
   </div>
 

@@ -10,7 +10,7 @@
  */
 angular
   .module('gitStuffApp', ['ngRoute'])
-  .config(function ($locationProvider, $routeProvider) {
+  .config(function ($routeProvider) {
 
     $routeProvider
       .when('/', {
@@ -24,4 +24,5 @@ angular
      .otherwise({
         redirectTo: '/'
       });
+
   });
