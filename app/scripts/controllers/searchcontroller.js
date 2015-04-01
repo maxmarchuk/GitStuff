@@ -10,7 +10,6 @@
 angular.module('gitStuffApp')
   .controller('SearchcontrollerCtrl', function ($scope, $location) {
       $scope.notifyMain = function() {
-      $location.url('/');
       $scope.$broadcast('search', $scope.username);
       $scope.username = null;
     }

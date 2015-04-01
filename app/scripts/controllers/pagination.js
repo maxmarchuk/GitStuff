@@ -8,12 +8,17 @@
  */
 angular.module('gitStuffApp')
   .controller('PaginationCtrl', function ($scope) {
+
     $scope.curPage = 0;
     $scope.pageSize = 5;
 
     $scope.numberOfPages = function()
     {
-      return Math.ceil($scope.repos.length / $scope.pageSize);
+      if($scope.repos != null) {
+        return Math.ceil($scope.repos.length / $scope.pageSize);
+      } else {
+        return 0;
+      }
     };
 
   })
@@ -21,7 +26,11 @@ angular.module('gitStuffApp')
   {
     return function(input, start)
     {
-      start = +start;
-      return input.slice(start);
+      if(input != null) {
+        start = +start;
+        return input.slice(start);
+      } else {
+        return 0;
+      }
     };
   });

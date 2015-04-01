@@ -10,14 +10,14 @@
     <div id="user-details">
       <ul>
         <li><a href="{{user.blog}}"><span id="blog">{{user.blog}}</span></a></li>
-        <li><a href="mailto:{{user.email}}"><span id="email">{{user.email}}</span></a></li>
-        <li>{{user.location}}</li>
+        <li><span class="glyphicon glyphicon-envelope"></span><a href="mailto:{{user.email}}"><span id="email">{{user.email}}</span></a></li>
+        <li><span class="glyphicon glyphicon-map-marker"></span>{{user.location}}</li>
       </ul>
     </div>
 
     <div id="followers-details">
       <ul class="list-inline">
-        <li class="text-center">{{user.followers}} <p>Followers</p></li>
+        <li class="text-center">{{user.followers}} <a href="#" ng-click="getFollowers(user.name)"><p>Followers</p></a></li>
         <li class="text-center">{{user.starred}} <p>Starred</p></li>
         <li class="text-center">{{user.following}} <p>Following</p></li>
       </ul>
@@ -26,8 +26,6 @@
 
   <!-- Repo Table -->
   <div class="col-md-8" ng-controller="PaginationCtrl">
-    <h2>Repos</h2>
-
     <ul>
       <li ng-repeat="repo in repos | pagination: curPage * pageSize | limitTo: pageSize" >
         <a href="{{repo.html_url}}" alt="{{repo.name}}">{{repo.name}}</a>
