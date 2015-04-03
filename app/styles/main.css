@@ -177,4 +177,8 @@ ul {
     padding-top: 6px;
   }
 
+  .header a#jumpHome {
+    text-decoration: none;
+    color: #fff;
+  }
 }
