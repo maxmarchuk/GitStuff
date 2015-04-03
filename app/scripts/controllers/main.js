@@ -8,7 +8,7 @@
  * Main Controller of the gitStuffApp
  */
 angular.module('gitStuffApp')
-  .controller('MainCtrl', function ($scope, gitService) {
+  .controller('MainCtrl', function ($scope, $location, gitService) {
 
     $scope.$on('search', function(event, username) {
       $scope.loaded = false;

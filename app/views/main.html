@@ -17,7 +17,7 @@
 
     <div id="followers-details">
       <ul class="list-inline">
-        <li class="text-center">{{user.followers}} <a href="#" ng-click="getFollowers(user.name)"><p>Followers</p></a></li>
+        <li class="text-center">{{user.followers}} <p><a href="#followers/{{user.login}}" ng-click="">Followers</a></p></li>
         <li class="text-center">{{user.starred}} <p>Starred</p></li>
         <li class="text-center">{{user.following}} <p>Following</p></li>
       </ul>

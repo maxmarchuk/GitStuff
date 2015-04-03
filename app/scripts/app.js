@@ -17,7 +17,7 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/followers', {
+      .when('/followers/:username', {
         templateUrl: 'views/followers.html',
         controller: 'FollowCtrl'
       })

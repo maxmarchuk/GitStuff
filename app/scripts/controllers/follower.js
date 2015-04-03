@@ -11,13 +11,13 @@
 'use strict';
 
 angular.module('gitStuffApp')
-  .controller('FollowCtrl', function ($scope, gitService) {
-    $scope.username = "maxmarchuk";
+  .controller('FollowCtrl', function ($scope, gitService, $routeParams) {
+    $scope.username = $routeParams.username;
+    //$scope.username = "maxmarchuk";
   gitService.getFollowers($scope.username).then(function(data){
       $scope.followers = data;
-      console.log($scope.followers);
+      console.log("Followers of : " + $scope.username);  // Making sure I'm not confused...
       $scope.loaded = true;
-
     },
     function(error) {
       $scope.error = error;
