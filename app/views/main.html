@@ -28,7 +28,8 @@
   <div class="col-md-8" ng-controller="PaginationCtrl">
     <ul>
       <li ng-repeat="repo in repos | pagination: curPage * pageSize | limitTo: pageSize" >
-        <a href="{{repo.html_url}}" alt="{{repo.name}}">{{repo.name}}</a>
+        <!--<a href="{{repo.html_url}}" alt="{{repo.name}}">{{repo.name}}</a>-->
+        <a href="#{{user.login}}/repo/{{repo.name}}">{{repo.name}}</a>
         <p>{{repo.description}}</p>
         <p><span class="date-name">Last Updated </span>{{repo.updated_at | date:longDate}}</p>
         <hr>

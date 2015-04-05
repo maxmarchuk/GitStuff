@@ -1,0 +1,8 @@
+<div class="row" ng-show="loaded">
+  <div class="col-md-12">
+    <h1>{{repo.name}}</h1>
+    <a class="btn btn-default" href="{{repo.html_url}}" role="button">See on GitHub</a>
+    <h3>{{repo.description}}</h3>
+    <p><span class="date-name">Last Updated </span>{{repo.updated_at | date:longDate}}</p>
+  </div>
+</div>

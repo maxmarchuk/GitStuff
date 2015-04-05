@@ -21,6 +21,10 @@ angular
         templateUrl: 'views/followers.html',
         controller: 'FollowCtrl'
       })
+      .when('/:username/repo/:reponame', {
+        templateUrl: 'views/repo.html',
+        controller: 'RepoCtrl'
+      })
      .otherwise({
         redirectTo: '/'
       });

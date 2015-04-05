@@ -41,6 +41,22 @@ angular.module('gitStuffApp')
 
     };
 
+    this.getRepo = function(username, reponame) {
+      var def = $q.defer();
+
+      //GET /repos/:owner/:repo
+      $http.get('https://api.github.com/repos/' + username +  '/' + reponame)
+        .success(function (data) {
+          def.resolve(data);
+        })
+        .error(function () {
+          def.reject('Failed to get repo' + reponame + 'for user "' + username + '"');
+        });
+      return def.promise;
+
+    };
+
+
     this.getFollowers = function (username) {
 
       var def = $q.defer();
