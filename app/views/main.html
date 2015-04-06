@@ -17,7 +17,7 @@
 
     <div id="followers-details">
       <ul class="list-inline">
-        <li class="text-center">{{user.followers}} <p><a href="#followers/{{user.login}}" ng-click="">Followers</a></p></li>
+        <li class="text-center"><a href="#followers/{{user.login}}">{{user.followers}}</a> <p><a href="#followers/{{user.login}}" ng-click="">Followers</a></p></li>
         <li class="text-center">{{user.starred}} <p>Starred</p></li>
         <li class="text-center">{{user.following}} <p>Following</p></li>
       </ul>
@@ -35,7 +35,7 @@
       </li>
     </ul>
 
-    <!--Pagination div --->
+    <!--Pagination div -->
 
     <div class="pagination-div" ng-show="repos.length">
       <ul>
